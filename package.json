@@ -1,0 +1,14 @@
+{
+  "name": "indictment-clothing-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "Austin Rowe",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
+}
