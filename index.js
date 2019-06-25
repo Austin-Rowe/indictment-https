@@ -5,8 +5,8 @@ const path = require('path');
 const appHttps = express();
 const app = express();
 
-const key = fs.readFileSync(/*path to key*/);
-const cert = fs.readFileSync( /*path to cert*/ );
+const key = fs.readFileSync('/etc/letsencrypt/live/indictmentclothing.com/privkey.pem');
+const cert = fs.readFileSync('/etc/letsencrypt/live/indictmentclothing.com/fullchain.pem');
 
 const options = {
     cert: cert,
@@ -19,7 +19,7 @@ const options = {
 appHttps.use(express.static(path.join(__dirname, 'build')));
 
 //React build folder serve up
-appHttps.get('*', res => {
+appHttps.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'build/index.html'));
 });
 
